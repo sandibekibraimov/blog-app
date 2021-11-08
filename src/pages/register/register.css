@@ -1,0 +1,58 @@
+.register {
+  height: calc(100vh - 15vh);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url('https://images.pexels.com/photos/6337/light-coffee-pen-working.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-size: cover;
+}
+
+.registerTitle {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.registerForm {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registerForm > label {
+  margin: 0.8rem 0;
+}
+
+.registerInput {
+  padding: 0.8rem;
+  background-color: white;
+  border: none;
+}
+
+.registerPageBtn {
+  margin-top: 0.8rem;
+  cursor: pointer;
+  background-color: teal;
+  border: none;
+  color: white;
+  border-radius: 0.6rem;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+}
+
+.loginRegisterBtn {
+  position: absolute;
+  top: 18vh;
+  right: 20px;
+  background-color: lightcoral;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 0.6rem;
+  font-size: 0.8rem;
+}
