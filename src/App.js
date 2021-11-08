@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import './App.css';
 import TopBar from './components/topbar/TopBar';
-import HomePage from './pages/HomePage';
-import PostPage from './pages/PostPage';
+import HomePage from './pages/home/HomePage';
+import PostPage from './pages/post/PostPage';
 
 const App = () => {
   return (

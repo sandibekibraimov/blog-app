@@ -22,33 +22,32 @@ const singlePost = () => {
             Author: <b>Sandibek</b>
           </span>
           <span className='singlePostDate'>1 hour ago</span>
-          <p className='singlePostDescription'>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
-            minus nisi consequatur tenetur nulla expedita similique ex adipisci
-            dignissimos veniam. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Ducimus minus nisi consequatur tenetur nulla
-            expedita similique ex adipisci dignissimos veniam. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Ducimus minus nisi
-            consequatur tenetur nulla expedita similique ex adipisci dignissimos
-            veniam. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Ducimus minus nisi consequatur tenetur nulla expedita similique ex
-            adipisci dignissimos veniam. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Ducimus minus nisi consequatur tenetur nulla
-            expedita similique ex adipisci dignissimos veniam. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Ducimus minus nisi
-            consequatur tenetur nulla expedita similique ex adipisci dignissimos
-            veniam. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Ducimus minus nisi consequatur tenetur nulla expedita similique ex
-            adipisci dignissimos veniam. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Ducimus minus nisi consequatur tenetur nulla
-            expedita similique ex adipisci dignissimos veniam. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Ducimus minus nisi
-            consequatur tenetur nulla expedita similique ex adipisci dignissimos
-            veniam. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Ducimus minus nisi consequatur tenetur nulla expedita similique ex
-            adipisci dignissimos veniam.
-          </p>
         </div>
+        <p className='singlePostDescription'>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
+          minus nisi consequatur tenetur nulla expedita similique ex adipisci
+          dignissimos veniam. Lorem ipsum dolor, sit amet consectetur
+          adipisicing elit. Ducimus minus nisi consequatur tenetur nulla
+          expedita similique ex adipisci dignissimos veniam. Lorem ipsum dolor,
+          sit amet consectetur adipisicing elit. Ducimus minus nisi consequatur
+          tenetur nulla expedita similique ex adipisci dignissimos veniam. Lorem
+          ipsum dolor, sit amet consectetur adipisicing elit. Ducimus minus nisi
+          consequatur tenetur nulla expedita similique ex adipisci dignissimos
+          veniam. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Ducimus minus nisi consequatur tenetur nulla expedita similique ex
+          adipisci dignissimos veniam. Lorem ipsum dolor, sit amet consectetur
+          adipisicing elit. Ducimus minus nisi consequatur tenetur nulla
+          expedita similique ex adipisci dignissimos veniam. Lorem ipsum dolor,
+          sit amet consectetur adipisicing elit. Ducimus minus nisi consequatur
+          tenetur nulla expedita similique ex adipisci dignissimos veniam. Lorem
+          ipsum dolor, sit amet consectetur adipisicing elit. Ducimus minus nisi
+          consequatur tenetur nulla expedita similique ex adipisci dignissimos
+          veniam. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Ducimus minus nisi consequatur tenetur nulla expedita similique ex
+          adipisci dignissimos veniam. Lorem ipsum dolor, sit amet consectetur
+          adipisicing elit. Ducimus minus nisi consequatur tenetur nulla
+          expedita similique ex adipisci dignissimos veniam.
+        </p>
       </div>
     </div>
   );

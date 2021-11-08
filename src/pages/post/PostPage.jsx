@@ -1,6 +1,6 @@
 import React from 'react';
-import Sidebar from '../components/sidebar/Sidebar';
-import SinglePost from '../components/singlePost/SinglePost';
+import Sidebar from '../../components/sidebar/Sidebar';
+import SinglePost from '../../components/singlePost/SinglePost';
 import './postpage.css';
 
 const PostPage = () => {
