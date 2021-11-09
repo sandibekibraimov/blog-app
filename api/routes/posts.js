@@ -71,8 +71,18 @@ router.delete('/:id', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
-    // const { password, ...others } = user._doc;
     res.status(200).json(post);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+});
+
+// get all posts
+router.get('/', async (req, res) => {
+  try {
+    const posts = await Post.find();
+    res.status(200).json(posts);
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
