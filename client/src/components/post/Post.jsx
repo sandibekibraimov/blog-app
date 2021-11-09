@@ -1,31 +1,33 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import './post.css';
 
-const Post = () => {
+const Post = ({ post }) => {
+  console.log(post);
+  const { username, title, photo, description, categories, createdAt, _id } =
+    post;
+  console.log(categories);
+
   return (
     <div className='post'>
-      <img
-        src='https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
-        alt=''
-        className='postImg'
-      />
+      {photo && <img src={photo} alt='' className='postImg' />}
       <div className='postInfo'>
         <div className='postCategories'>
-          <span className='postCategory'>Music</span>
-          <span className='postCategory'>Life</span>
+          {categories.map((category) => (
+            <span className='postCategory' key={category._id}>
+              {category}
+            </span>
+          ))}
         </div>
-        <span className='postTitle'>Lorem ipsum dolor sit.</span>
+
+        <span className='postTitle'>
+          <NavLink to={`/post/${_id}`}>{title}</NavLink>
+        </span>
         <hr />
-        <span className='postDate'>1 hour ago</span>
+        <span className='postDate'>{new Date(createdAt).toDateString()}</span>
       </div>
-      <p className='postDescription'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit a nostrum
-        quia aut placeat amet nihil doloribus sapiente molestiae aspernatur.
-        Natus, suscipit? Quaerat, amet quos? Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Odit a nostrum quia aut placeat amet nihil
-        doloribus sapiente molestiae aspernatur. Natus, suscipit? Quaerat, amet
-        quos?
-      </p>
+      <p className='postDescription'>{description}</p>
     </div>
   );
 };
