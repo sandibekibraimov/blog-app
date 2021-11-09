@@ -9,8 +9,8 @@ const User = require('../models/User');
 router.post('/register', async (req, res) => {
   const { username, email, password, profilePic } = req.body;
   try {
-    const email = await User.findOne({ email });
-    if (email) {
+    const emailCheck = await User.findOne({ email });
+    if (emailCheck) {
       return res.status(404).json({ msg: 'User exists' });
     }
 

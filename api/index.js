@@ -1,5 +1,6 @@
 const express = require('express');
 const multer = require('multer');
+const cors = require('cors');
 const app = express();
 
 const dbConnect = require('./config/dbConnect');
@@ -9,6 +10,7 @@ const postRoutes = require('./routes/posts');
 const categoryRoutes = require('./routes/categories');
 
 app.use(express.json());
+app.use(cors());
 dbConnect();
 
 app.get('/', (req, res) => {
