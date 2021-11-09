@@ -7,7 +7,6 @@ const Post = ({ post }) => {
   console.log(post);
   const { username, title, photo, description, categories, createdAt, _id } =
     post;
-  console.log(categories);
 
   return (
     <div className='post'>

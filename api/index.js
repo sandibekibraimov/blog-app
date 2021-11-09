@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
     callBackFn(null, 'assets');
   },
   filename: (req, file, callBackFn) => {
-    callBackFn(null, 'image.png');
+    callBackFn(null, req.body.name);
   },
 });
 

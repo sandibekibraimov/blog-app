@@ -1,62 +1,50 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 import './singlePost.css';
 
-const singlePost = () => {
-  const location = useLocation();
-  const path = location.pathname.split('/')[2];
-  console.log(path);
+const SinglePost = () => {
+  let params = useParams();
+  const [post, setPost] = useState();
+  const { id } = params;
+
+  const getPost = useCallback(async () => {
+    const response = await axios.get(`/posts/${id}`);
+    setPost(response.data);
+  }, [id]);
+
+  useEffect(() => {
+    getPost();
+  }, [getPost]);
+
+  console.log(post);
 
   return (
     <div className='singlePost'>
-      <div className='singlePostWrapper'>
-        <img
-          src='https://images.pexels.com/photos/3244513/pexels-photo-3244513.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
-          alt=''
-          className='singlePostImg'
-        />
-        <h1 className='singlePostTitle'>
-          Lorem, ipsum dolor.
-          <div className='singlePostEdit'>
-            <i className='singlePostIcon fas fa-edit'></i>
-            <i className='singlePostIcon fas fa-trash-alt'></i>
+      {post && (
+        <div className='singlePostWrapper'>
+          <img src={post.photo} alt='' className='singlePostImg' />
+          <h1 className='singlePostTitle'>
+            {post.title}
+            <div className='singlePostEdit'>
+              <i className='singlePostIcon fas fa-edit'></i>
+              <i className='singlePostIcon fas fa-trash-alt'></i>
+            </div>
+          </h1>
+          <div className='singlePostInfo'>
+            <span className='singlePostAuthor'>
+              Author: <b>{post.username}</b>
+            </span>
+            <span className='singlePostDate'>
+              {new Date(post.createdAt).toDateString()}
+            </span>
           </div>
-        </h1>
-        <div className='singlePostInfo'>
-          <span className='singlePostAuthor'>
-            Author: <b>Sandibek</b>
-          </span>
-          <span className='singlePostDate'>1 hour ago</span>
+          <p className='singlePostDescription'>{post.description}</p>
         </div>
-        <p className='singlePostDescription'>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
-          minus nisi consequatur tenetur nulla expedita similique ex adipisci
-          dignissimos veniam. Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit. Ducimus minus nisi consequatur tenetur nulla
-          expedita similique ex adipisci dignissimos veniam. Lorem ipsum dolor,
-          sit amet consectetur adipisicing elit. Ducimus minus nisi consequatur
-          tenetur nulla expedita similique ex adipisci dignissimos veniam. Lorem
-          ipsum dolor, sit amet consectetur adipisicing elit. Ducimus minus nisi
-          consequatur tenetur nulla expedita similique ex adipisci dignissimos
-          veniam. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Ducimus minus nisi consequatur tenetur nulla expedita similique ex
-          adipisci dignissimos veniam. Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit. Ducimus minus nisi consequatur tenetur nulla
-          expedita similique ex adipisci dignissimos veniam. Lorem ipsum dolor,
-          sit amet consectetur adipisicing elit. Ducimus minus nisi consequatur
-          tenetur nulla expedita similique ex adipisci dignissimos veniam. Lorem
-          ipsum dolor, sit amet consectetur adipisicing elit. Ducimus minus nisi
-          consequatur tenetur nulla expedita similique ex adipisci dignissimos
-          veniam. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Ducimus minus nisi consequatur tenetur nulla expedita similique ex
-          adipisci dignissimos veniam. Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit. Ducimus minus nisi consequatur tenetur nulla
-          expedita similique ex adipisci dignissimos veniam.
-        </p>
-      </div>
+      )}
     </div>
   );
 };
 
-export default singlePost;
+export default SinglePost;
