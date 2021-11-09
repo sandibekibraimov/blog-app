@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import './post.css';
 
 const Post = ({ post }) => {
-  console.log(post);
   const { username, title, photo, description, categories, createdAt, _id } =
     post;
 

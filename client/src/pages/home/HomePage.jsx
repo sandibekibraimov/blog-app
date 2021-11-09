@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 import './homepage.css';
@@ -9,15 +10,16 @@ import Sidebar from '../../components/sidebar/Sidebar';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+  const { search } = useLocation();
 
   const fetchPosts = async () => {
-    const response = await axios.get('/posts');
+    const response = await axios.get('/posts' + search);
     setPosts(response.data);
   };
 
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [search]);
 
   return (
     <Fragment>

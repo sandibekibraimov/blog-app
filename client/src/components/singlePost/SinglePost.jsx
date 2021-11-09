@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 import './singlePost.css';
 
@@ -18,8 +19,6 @@ const SinglePost = () => {
     getPost();
   }, [getPost]);
 
-  console.log(post);
-
   return (
     <div className='singlePost'>
       {post && (
@@ -34,7 +33,10 @@ const SinglePost = () => {
           </h1>
           <div className='singlePostInfo'>
             <span className='singlePostAuthor'>
-              Author: <b>{post.username}</b>
+              Author:{' '}
+              <NavLink to={`/?user=${post.username}`}>
+                <b>{post.username}</b>
+              </NavLink>
             </span>
             <span className='singlePostDate'>
               {new Date(post.createdAt).toDateString()}

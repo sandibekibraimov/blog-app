@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { NavLink } from 'react-router-dom';
+
 import './sidebar.css';
 
 const Sidebar = () => {
+  const [categories, setCategories] = useState([]);
+
+  const fetchCategories = async () => {
+    const response = await axios.get('/categories');
+    setCategories(response.data);
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
   return (
     <div className='sidebar'>
       <div className='sidebarItem'>
@@ -16,12 +30,14 @@ const Sidebar = () => {
       <div className='sidebarItem'>
         <span className='sidebarTitle'>Categories</span>
         <ul className='sidebarList'>
-          <li className='sidebarListItem'>life</li>
-          <li className='sidebarListItem'>music</li>
-          <li className='sidebarListItem'>style</li>
-          <li className='sidebarListItem'>sport</li>
-          <li className='sidebarListItem'>tech</li>
-          <li className='sidebarListItem'>cinema</li>
+          {categories &&
+            categories.map((category) => (
+              <NavLink to={`/?cat=${category.name}`}>
+                <li key={category._id} className='sidebarListItem'>
+                  {category.name}
+                </li>
+              </NavLink>
+            ))}
         </ul>
       </div>
       <div className='sidebarItem'>
