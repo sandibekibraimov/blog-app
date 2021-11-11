@@ -23,6 +23,10 @@
   align-items: center;
 }
 
+.registerForm > span {
+  color: red;
+}
+
 .registerForm > label {
   margin: 0.8rem 0;
 }
